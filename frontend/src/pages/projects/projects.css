@@ -1,0 +1,9 @@
+.projects-display{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.projects h2{
+    margin-bottom: 30px;
+}

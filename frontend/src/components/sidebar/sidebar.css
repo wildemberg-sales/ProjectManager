@@ -1,0 +1,8 @@
+.sidebar{
+    width: 20%;
+    height: 100%;
+    padding: 2%;
+    background-color: #CACDD2;
+    position: fixed;
+    display: inline;
+}

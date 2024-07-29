@@ -1,0 +1,39 @@
+.project-module{
+    width: calc((100% / 3) - 20px);
+    background-color: #d8dce1;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.project-module img{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.project-module h3{
+    font-size: 1.5rem;
+}
+
+.data-project{
+    padding: 20px 10px;
+}
+
+.data-project h3{
+    margin-bottom: 10px;
+}
+
+.project-icons{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+}
+
+.project-icon{
+    margin: 15px 5% 15px 0;
+}
+
+.project-icons img{
+    
+    width: auto;
+}
