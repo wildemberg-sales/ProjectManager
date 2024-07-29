@@ -10,6 +10,9 @@ import Users from './pages/users/users';
 import Login from './pages/login/login';
 
 import Sidebar from './components/sidebar/sidebar';
+import ProtectedRoute from './components/protectedRoute/protectedRoute'
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 const router = createBrowserRouter([
   {
@@ -25,19 +28,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <ProtectedRoute><Home /></ProtectedRoute> ,
       },
       {
         path: "/projects",
-        element: <Projects />,
+        element: <ProtectedRoute><Projects /></ProtectedRoute> ,
       },
       {
         path: "/project/:id",
-        element: <Project />,
+        element: <ProtectedRoute><Project /></ProtectedRoute> ,
       },
       {
         path: "/users",
-        element: <Users />
+        element: <ProtectedRoute><Users /></ProtectedRoute> 
       },
     ],
   },
@@ -50,6 +53,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

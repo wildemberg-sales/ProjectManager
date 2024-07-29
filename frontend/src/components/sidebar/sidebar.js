@@ -1,10 +1,11 @@
 import React from 'react';
 import './sidebar.css'
+import logo from './../../images/logo.png'
 
 export default function Sidebar(){
     return(
         <div className='sidebar'>
-            <h2>Project Manager</h2>
+            <img src={logo}/>
             <a href="#">asdfasdf</a>
             <p>asdf</p>
             <a href="#">asdfasdasdf</a>

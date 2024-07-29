@@ -2,7 +2,11 @@
     width: 20%;
     height: 100%;
     padding: 2%;
-    background-color: #CACDD2;
+    background-color: #ced0d4;
     position: fixed;
     display: inline;
+}
+
+.sidebar img{
+    width: 100%;
 }
