@@ -1,8 +1,10 @@
 import React from "react";
 import './projects.css'
 import ProjectModule from "../../components/project/projectModule";
+import { useSelector } from "react-redux";
 
 export default function Projects(){
+    console.log('Is authenticated:', useSelector((state) => state.auth.isAuthenticated));
     return(
         <div className="projects">
             <h2>Todos os projetos</h2>

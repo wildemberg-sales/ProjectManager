@@ -7,13 +7,11 @@ type JwtPayload={
 }
 
 export const authMiddleware = async(req:Request, res:Response, next:NextFunction) => {
-    const {authorization} = req.headers
+    const token = req.cookies.token
 
-    if(!authorization){
+    if(!token){
         return res.status(401).send("Não Autorizado!")
     }
-
-    const token = authorization.split(' ')[1]
 
     const {id} = jwt.verify(token, "çlKJP*KG*YUI¨&%DF%ËV&ËJ¨$DIFGKUYTUR%&d") as JwtPayload
 

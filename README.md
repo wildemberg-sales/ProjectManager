@@ -3,6 +3,8 @@ Aplicativo web voltado para o desenvolvimento de uma plataforma para gerenciamen
 
 ## Desafio: Plataforma de Gerenciamento de Projetos
 
+export NODE_OPTIONS=--openssl-legacy-provider
+
 Este desafio visa simular o desenvolvimento de uma plataforma web para gerenciamento de projetos, utilizando React (frontend) e Node.js (backend). Você será responsável por criar uma aplicação completa, englobando desde a interface do usuário até a persistência de dados, testando e implementando funcionalidades essenciais para o gerenciamento de projetos.
 
 **Requisitos:**
