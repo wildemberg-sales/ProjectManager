@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { BrowserRouter, createBrowserRouter, RouterProvider, Outlet, Navigate } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import Home from './pages/home/home';
 import Project from './pages/project/project';
@@ -18,29 +18,31 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div className="general">
-        <Sidebar />
-        <div className="center">
-          <Outlet />
+      <ProtectedRoute>
+        <div className="general">
+          <Sidebar />
+          <div className="center">
+            <Outlet />
+          </div>
         </div>
-      </div>
+      </ProtectedRoute>
     ),
     children: [
       {
         path: "/",
-        element: <ProtectedRoute><Home /></ProtectedRoute> ,
+        element: <Home /> ,
       },
       {
         path: "/projects",
-        element: <ProtectedRoute><Projects /></ProtectedRoute> ,
+        element: <Projects /> ,
       },
       {
         path: "/project/:id",
-        element: <ProtectedRoute><Project /></ProtectedRoute> ,
+        element: <Project /> ,
       },
       {
         path: "/users",
-        element: <ProtectedRoute><Users /></ProtectedRoute> 
+        element: <Users /> 
       },
     ],
   },

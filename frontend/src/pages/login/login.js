@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { loginSuccess } from "../../store/authSlice";
 
@@ -15,7 +15,9 @@ export default function Login(){
     const submitForm = async (e) => {
         e.preventDefault()
 
-        const res = await fetch('http://localhost:4000/login',{
+        const url = process.env.REACT_APP_URL_API || "http://localhost:4000"
+        
+        const res = await fetch(url+'/login',{
             method:"POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -25,10 +27,7 @@ export default function Login(){
         })
 
         if(res.ok){
-            dispatch(loginSuccess())
-
-            console.log(await res.json())
-
+            dispatch(loginSuccess(await res.json()))
             navigate('/')
         }else{
             const messageError = await res.text()
