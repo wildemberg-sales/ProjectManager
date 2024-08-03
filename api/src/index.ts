@@ -1,10 +1,13 @@
 import express from 'express'
 import cors from 'cors'
+import dotenv from 'dotenv'
+import cookieParser from 'cookie-parser'
 import routes from './routes'
 import { AppDataSource } from './database/data-source'
 
 AppDataSource.initialize().then(()=>{
-    const app = express()
+    dotenv.config();
+    const app = express();
     const PORT = 4000;
 
     app.use(cors({
@@ -12,6 +15,7 @@ AppDataSource.initialize().then(()=>{
         optionsSuccessStatus: 200,
         credentials:true
     }))
+    app.use(cookieParser());
     app.use(express.json())
     app.use(routes)
 
