@@ -11,9 +11,9 @@ AppDataSource.initialize().then(()=>{
     const PORT = 4000;
 
     app.use(cors({
-        origin:'http://localhost:3000',
+        origin:'*',
         optionsSuccessStatus: 200,
-        credentials:true
+        credentials: true
     }))
     app.use(cookieParser());
     app.use(express.json())

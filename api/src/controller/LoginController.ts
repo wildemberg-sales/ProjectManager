@@ -1,4 +1,4 @@
-import { Request, Response } from "express"
+import type { Request, Response } from "express"
 import { UserRepository } from "../repositories/UserRepository"
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"

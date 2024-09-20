@@ -15,7 +15,7 @@ routes.get('/', (req, res)=>{
 routes.post("/login", LoginController.login)
 
 //Todas as rotas abaixo daqui vão usar o middleware
-routes.use(authMiddleware)
+// routes.use(authMiddleware)
 
 routes.get("/profile", LoginController.getProfile)
 
