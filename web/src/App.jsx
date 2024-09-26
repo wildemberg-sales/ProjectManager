@@ -1,4 +1,3 @@
-import Header from './components/header'
 import { useQuery } from '@tanstack/react-query'
 import { ProjectComponent } from './components/ProjectComponent'
 import { getProjects } from './http/getProjects'
@@ -12,7 +11,6 @@ function App() {
 
   return (
     <div>
-      <Header/>
       {
         isLoading ?
           <div className='py-10 text-center'>

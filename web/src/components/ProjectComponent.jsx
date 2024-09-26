@@ -18,9 +18,9 @@ export function ProjectComponent(props){
             <div className='flex flex-1 gap-2 justify-between items-center'>
                 <p className='text-cyan-200'>{data.term}</p>
                 <div className='flex justify-end gap-4 mt-4'>
-                    <button type='button'><Eye /></button>
-                    <button type='button'><Pencil /></button>
-                    <button type='button'><Trash2 /></button>
+                    <a href={`${data.id}`}><Eye /></a>
+                    <a href={`${data.id}`}><Pencil /></a>
+                    <a href={`${data.id}`}><Trash2 /></a>
                 </div>
             </div>
         </div>

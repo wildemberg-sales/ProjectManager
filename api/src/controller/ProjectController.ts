@@ -11,6 +11,10 @@ class ProjectController{
 
     async one(req: Request, res:Response){
         const result = await ProjectRepository.findOneBy({id:Number(req.params.id)})
+
+        if(!result){
+            return res.status(400).json({message:"Nenhum projeto encontrado"})
+        }
         
         return res.json(result)
     }
