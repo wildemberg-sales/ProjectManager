@@ -8,14 +8,14 @@ export default function Project(){
     const {idProject} = useParams()
 
     const {isLoading,error, data} = useQuery({
-        queryKey: [`project`, idProject],
+        queryKey: ['project', idProject],
         queryFn: ()=> getProject(idProject),
         staleTime: 1000 * 5
     })
 
 
     return(
-        <div className="px-6 py-4 max-w-7xl">
+        <div className="px-6 py-4 max-w-7xl m-auto">
             {
                 isLoading ? (
                     <div className='py-10 text-center'>
@@ -31,15 +31,12 @@ export default function Project(){
                         <h1 className="text-xl font-bold text-cyan-950 mb-4 ">{data.name}</h1>
                         <div className="flex justify-center gap-2 items-start mb-4">
                             <span>{data.progress}%</span>
-                            <div className="w-[30%] bg-white rounded-full h-4">
-                                <div
-                                    className="bg-cyan-900 rounded-full h-4"
-                                    style={{ width: `${data.progress}%` }}
-                                ></div>
+                            <div className="w-[80%] bg-white rounded-full h-4">
+                                <div className="bg-cyan-900 rounded-full h-4" style={{ width: `${data.progress}%` }}> </div>
                             </div>
                         </div>
                         <p>{data.description}</p>
-                        <div className="flex justify-evenly mt-5 items-center">
+                        <div className="flex sm:justify-evenly mt-5 items-center sm:flex-row sm:gap-0 flex-col gap-4">
                             <p className="text-cyan-600">Data de início: {dayjs(data.term).format('DD/MM/YYYY')}</p>
                             {
                                 data.status === 'pendente' ? (
@@ -66,7 +63,7 @@ export default function Project(){
                                 ) 
                             }
                         </div>
-                        <div className="flex justify-evenly mt-5">
+                        <div className="flex sm:flex-row justify-evenly mt-5 flex-col">
                             <div className=" text-start">
                                 <h3 className="text-xl font-bold text-cyan-950">Responsáveis</h3>            
                                 <li >Carlos</li>
